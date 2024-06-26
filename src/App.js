@@ -1,4 +1,9 @@
+import { useEffect } from "react";
+
 function App() {
+  useEffect(() => {
+    document.title = "Admin";
+  }, []);
   return (
     <div className="px-6 md:px-0 flex md:justify-center">
       <div className="grid border rounded-md  p-6 space-y-4 w-full md:w-1/4 mt-32">
