@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import adminLogo from "../../Assets/Images/admin.webp";
+import { ArrowRightCircleIcon } from "@heroicons/react/16/solid";
 
 function Login() {
   useEffect(() => {
@@ -22,11 +23,11 @@ function Login() {
 
           {/* input telp */}
           <label htmlFor="telp">
-            <p className="font-medium mb-2">No telepon</p>
+            <p className="font-medium mb-2">No Telepon</p>
             <input
               type="text"
               placeholder="Masukkan no telepon"
-              className="border focus:border-blue-500 focus:outline-none rounded-[10px] bg-white  w-full p-2"
+              className="border focus:border-blue-500 focus:outline-none rounded-[10px] bg-white  w-full h-[48px] p-2"
             />
           </label>
           {/* input telp */}
@@ -37,12 +38,13 @@ function Login() {
             <input
               type="password"
               placeholder="Masukkan password"
-              className="border focus:border-blue-500 focus:outline-none rounded-[10px] bg-white w-full p-2 "
+              className="border focus:border-blue-500 focus:outline-none rounded-[10px] bg-white w-full h-[48px] p-2 "
             />
           </label>
           {/* input password */}
 
-          <button className="bg-blue-400 text-white font-medium p-2 rounded-[10px]">
+          <button className="flex justify-center items-center bg-blue-400 text-white font-medium p-2 rounded-[10px] space-y-2 w-full h-[48px]">
+            <ArrowRightCircleIcon className="text-white w-6 h-6 mr-2" />
             Login
           </button>
         </div>
