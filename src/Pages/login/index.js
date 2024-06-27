@@ -1,38 +1,51 @@
 import { useEffect } from "react";
+import adminLogo from "../../Assets/Images/admin.webp";
 
 function Login() {
   useEffect(() => {
     document.title = "Admin";
   }, []);
   return (
-    <div className="px-6 md:px-0 flex md:justify-center">
-      <div className="grid border bg-white rounded-md  p-6 space-y-4 w-full md:w-1/2 xl:w-1/4 mt-32">
-        <h1 className="font-semibold text-52  text-[24px]">Login admin</h1>
-        {/* input telp */}
-        <label htmlFor="telp">
-          <p className="font-medium">No telepon</p>
-          <input
-            type="text"
-            placeholder="Masukkan no telepon"
-            className="border focus:border-blue-500 focus:outline-none  bg-white  w-full p-2"
-          />
-        </label>
-        {/* input telp */}
+    <div className="h-screen bg-blue-400 z-0">
+      <div className="px-6 md:px-0 flex md:justify-center z-10">
+        <div className="grid border shadow bg-white rounded-[20px] p-6 space-y-4 w-full md:w-1/2 xl:w-1/4 mt-32">
+          <div className="flex">
+            <div className="flex justify-center items-center mr-2">
+              <img src={adminLogo} className=" w-6 h-6" alt="logo-admin" />
+            </div>
+            <div>
+              <h1 className="font-semibold text-52  text-[24px]">
+                Login admin
+              </h1>
+            </div>
+          </div>
 
-        {/* input password */}
-        <label htmlFor="password" className="mb-24">
-          <p className="font-medium">Password</p>
-          <input
-            type="password"
-            placeholder="Masukkan password"
-            className="border focus:border-blue-500 focus:outline-none bg-white w-full p-2 "
-          />
-        </label>
-        {/* input password */}
+          {/* input telp */}
+          <label htmlFor="telp">
+            <p className="font-medium mb-2">No telepon</p>
+            <input
+              type="text"
+              placeholder="Masukkan no telepon"
+              className="border focus:border-blue-500 focus:outline-none rounded-[10px] bg-white  w-full p-2"
+            />
+          </label>
+          {/* input telp */}
 
-        <button className="bg-blue-400 text-white p-2 mt-[5000px]">
-          Login
-        </button>
+          {/* input password */}
+          <label htmlFor="password">
+            <p className="font-medium mb-2">Password</p>
+            <input
+              type="password"
+              placeholder="Masukkan password"
+              className="border focus:border-blue-500 focus:outline-none rounded-[10px] bg-white w-full p-2 "
+            />
+          </label>
+          {/* input password */}
+
+          <button className="bg-blue-400 text-white font-medium p-2 rounded-[10px]">
+            Login
+          </button>
+        </div>
       </div>
     </div>
   );
