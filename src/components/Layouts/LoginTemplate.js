@@ -1,8 +1,23 @@
+import { useState } from "react";
 import InputField from "../Fragments/InputFIeld";
 import Button from "../Elements/Button";
+import { login } from "../../services/auth.services";
 import adminLogo from "../../assets/Images/admin.webp";
 
-function LoginTemplate() {
+function LoginTemplate({ onLogin }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await login(email, password);
+      onLogin();
+    } catch (error) {
+      setError("Email atau password salah!");
+    }
+  };
   return (
     <div className="h-screen bg-blue-400 z-0">
       <div className="px-6 md:px-0 flex md:justify-center z-10">
@@ -20,14 +35,21 @@ function LoginTemplate() {
             type="text"
             placeholder="Masukkan email"
             id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <InputField
             label="Password"
             type="password"
             placeholder="Masukkan password"
             id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
-          <Button>Login</Button>
+          <Button type="submit" onClick={handleSubmit}>
+            Login
+          </Button>
+          {error && <p className="text-red-500">{error}</p>}
         </div>
       </div>
     </div>

@@ -1,16 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
-import Login from "./pages/login/index";
+import Cookies from "js-cookie";
+import Login from "./pages/login";
+import Dashboard from "./pages/dashboard";
 import "./assets/Styles/index.css";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <Login />
-  </React.StrictMode>
-);
+const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();
+  useEffect(() => {
+    const token = Cookies.get("token");
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
+
+  return (
+    <React.StrictMode>
+      {isLoggedIn ? <Dashboard /> : <Login onLogin={handleLogin} />}
+    </React.StrictMode>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);

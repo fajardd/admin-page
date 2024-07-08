@@ -1,12 +1,12 @@
 import { useEffect } from "react";
 import LoginTemplate from "../../components/Layouts/LoginTemplate";
 
-function LoginPage() {
+function LoginPage({ onLogin }) {
   useEffect(() => {
     document.title = "Admin";
   }, []);
 
-  return <LoginTemplate />;
+  return <LoginTemplate onLogin={onLogin} />;
 }
 
 export default LoginPage;
