@@ -4,6 +4,7 @@ import Cookies from "js-cookie";
 import Login from "./pages/login";
 import Dashboard from "./pages/dashboard";
 import "./assets/Styles/index.css";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -21,7 +22,9 @@ const App = () => {
 
   return (
     <React.StrictMode>
-      {isLoggedIn ? <Dashboard /> : <Login onLogin={handleLogin} />}
+      <Router>
+        {isLoggedIn ? <Dashboard /> : <Login onLogin={handleLogin} />}
+      </Router>
     </React.StrictMode>
   );
 };
