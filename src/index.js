@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Login from "./Pages/login/index";
-import "./Assets/Styles/index.css";
+import Login from "./pages/login/index";
+import "./assets/Styles/index.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
