@@ -1,8 +1,9 @@
 import Cookies from "js-cookie";
+const BASE_URL = process.env.BASE_URL_API;
 
 export const login = async (email, password) => {
   try {
-    const response = await fetch("http://localhost:4000/login", {
+    const response = await fetch(`${BASE_URL}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
