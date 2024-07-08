@@ -1,7 +1,7 @@
 import Input from "../Elements/Input";
 import Label from "../Elements/Label";
 
-function InputField({ label, type, placeholder, id, value, onChange }) {
+function InputField({ label, type, placeholder, id, icon, value, onChange }) {
   return (
     <div>
       <Label htmlFor={id}>{label}</Label>
@@ -11,6 +11,7 @@ function InputField({ label, type, placeholder, id, value, onChange }) {
         id={id}
         value={value}
         onChange={onChange}
+        icon={icon}
       />
     </div>
   );

@@ -3,6 +3,7 @@ import InputField from "../Fragments/InputFIeld";
 import Button from "../Elements/Button";
 import { login } from "../../services/auth.services";
 import adminLogo from "../../assets/Images/admin.webp";
+import { EnvelopeIcon, LockClosedIcon } from "@heroicons/react/24/outline";
 
 function LoginTemplate({ onLogin }) {
   const [email, setEmail] = useState("");
@@ -30,11 +31,13 @@ function LoginTemplate({ onLogin }) {
               <h1 className="font-semibold text-52 text-[24px]">Login admin</h1>
             </div>
           </div>
+
           <InputField
             label="Email"
             type="text"
             placeholder="Masukkan email"
             id="email"
+            icon={EnvelopeIcon}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -43,13 +46,14 @@ function LoginTemplate({ onLogin }) {
             type="password"
             placeholder="Masukkan password"
             id="password"
+            icon={LockClosedIcon}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          {error && <p className="text-red-500">{error}</p>}
           <Button type="submit" onClick={handleSubmit}>
             Login
           </Button>
-          {error && <p className="text-red-500">{error}</p>}
         </div>
       </div>
     </div>

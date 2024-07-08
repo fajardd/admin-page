@@ -14,12 +14,22 @@ export const login = async (email, password) => {
       throw new Error("Login failed");
     }
     const data = await response.json();
+    // hari
     // Cookies.set("token", data.token, { expires: 7 }); // Menyimpan token dengan masa aktif 7 hari
-    const expiresHours = 6;
+
+    // jam;
+    const expiresHours = 12;
     const tokenExpiration = new Date(
       new Date().getTime() + expiresHours * 60 * 60 * 1000
     );
-    Cookies.set("token", data.token, { expires: tokenExpiration }); // Menyimpan token dengan masa aktif 6 Jam
+    Cookies.set("token", data.token, { expires: tokenExpiration }); // Menyimpan token dengan masa aktif 12 Jam
+
+    // menit
+    // const expiresInMinutes = 5;
+    // const tokenExpiration = new Date(
+    //   new Date().getTime() + expiresInMinutes * 60 * 1000
+    // ); // Hitung waktu kedaluwarsa dalam milliseconds
+    // Cookies.set("token", data.token, { expires: tokenExpiration }); // Atur token dengan waktu kedaluwarsa 5 menit
     return data.token;
   } catch (error) {
     console.error("Error during login:", error);
