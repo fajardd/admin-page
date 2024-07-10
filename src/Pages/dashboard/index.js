@@ -6,6 +6,7 @@ import Admin from "../admin/index";
 import Veterinarian from "../veterinarian/index";
 import Schedule from "../schedule/index";
 import Pelayanan from "../pelayanan/index";
+import Riwayat from "../riwayat/index";
 import bgDashboard from "../../assets/Images/bgPetcare.png";
 
 const Dashboard = () => {
@@ -36,6 +37,7 @@ const Dashboard = () => {
           <Route path="/veterinarian" element={<Veterinarian />} />
           <Route path="/schedule" element={<Schedule />} />
           <Route path="/pelayanan" element={<Pelayanan />} />
+          <Route path="/riwayat" element={<Riwayat />} />
         </Routes>
       </div>
     </div>

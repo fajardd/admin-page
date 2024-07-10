@@ -5,6 +5,7 @@ import {
   UserPlusIcon,
   CalendarIcon,
   ClipboardDocumentListIcon,
+  FolderIcon,
 } from "@heroicons/react/24/outline";
 import SidebarItem from "../Fragments/SidebarItem";
 
@@ -26,6 +27,7 @@ function Sidebar() {
           to="/pelayanan"
           label="Pelayanan"
         />
+        <SidebarItem icon={FolderIcon} to="/riwayat" label="Riwayat" />
       </div>
     </div>
   );
