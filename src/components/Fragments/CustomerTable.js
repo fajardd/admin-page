@@ -2,7 +2,7 @@ import React from "react";
 import Table from "../Elements/Table";
 import TableRowCustomer from "./TableRowCustomer";
 
-function CustomerTable({ customers, currentPage }) {
+function CustomerTable({ customers, currentPage, handleDeleteCustomer }) {
   return (
     <div className="overflow-x-auto w-full mt-6 border">
       <Table className="w-[100px] text-sm text-left border rtl:text-right text-black">
@@ -36,6 +36,7 @@ function CustomerTable({ customers, currentPage }) {
               customer={customer}
               index={index}
               currentPage={currentPage}
+              handleDeleteCustomer={handleDeleteCustomer}
             />
           ))}
         </tbody>

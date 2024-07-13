@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { getAllCustomer, addCustomer } from "../../services/customer.services";
+import {
+  getAllCustomer,
+  addCustomer,
+  deleteCustomer,
+} from "../../services/customer.services";
 import CustomerPageTemplate from "../../components/Layouts/CustomerPageTemplate";
 
 const Customer = () => {
@@ -58,6 +62,17 @@ const Customer = () => {
     }
   };
 
+  const handleDeleteCustomer = async (id_user) => {
+    try {
+      await deleteCustomer(id_user);
+      setCustomers((prevCustomers) =>
+        prevCustomers.filter((customer) => customer.id_user !== id_user)
+      );
+    } catch (error) {
+      setError(error.message);
+    }
+  };
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -73,6 +88,7 @@ const Customer = () => {
       onChange={handleChange}
       value={formData}
       handleAddCustomer={handleAddCustomer}
+      handleDeleteCustomer={handleDeleteCustomer}
     />
   );
 };

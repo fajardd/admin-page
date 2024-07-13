@@ -1,6 +1,7 @@
 import Cookies from "js-cookie";
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
+// GET ALL CUSTOMER
 export const getAllCustomer = async (page = 1, limit = 5) => {
   try {
     const token = Cookies.get("token");
@@ -25,6 +26,7 @@ export const getAllCustomer = async (page = 1, limit = 5) => {
   }
 };
 
+// CREATE DATA CUSTOMER
 export const addCustomer = async (customerData) => {
   try {
     const token = Cookies.get("token");
@@ -44,6 +46,29 @@ export const addCustomer = async (customerData) => {
     return data;
   } catch (error) {
     console.error("Error adding Customer", error);
+    throw error;
+  }
+};
+
+// DELETE DATA CUSTOMER
+export const deleteCustomer = async (id_user) => {
+  try {
+    const token = Cookies.get("token");
+    const response = await fetch(`${BASE_URL}/users/${id_user}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to delete customer");
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error delete Customer", error);
     throw error;
   }
 };

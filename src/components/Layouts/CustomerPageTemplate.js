@@ -11,6 +11,7 @@ function CustomerPageTemplate({
   onChange,
   value,
   handleAddCustomer,
+  handleDeleteCustomer,
 }) {
   return (
     <div>
@@ -21,7 +22,11 @@ function CustomerPageTemplate({
         value={value}
         handleAddCustomer={handleAddCustomer}
       />
-      <CustomerTable customers={customers} currentPage={currentPage} />
+      <CustomerTable
+        customers={customers}
+        currentPage={currentPage}
+        handleDeleteCustomer={handleDeleteCustomer}
+      />
       <PaginationTable
         currentPage={currentPage}
         totalPages={totalPages}
