@@ -10,10 +10,11 @@ const PaginationTable = ({ currentPage, totalPages, handlePageChange }) => {
     >
       <span className="text-sm font-normal text-gray-500 dark:text-gray-400 mb-4 md:mb-0 block w-full md:inline md:w-auto">
         Showing{" "}
-        <span className="font-semibold text-black">
+        <span className="font-semibold text-graya-400 ">
           {(currentPage - 1) * 5 + 1}-{currentPage * 5}
         </span>{" "}
-        of <span className="font-semibold text-black">{totalPages * 5}</span>
+        of{" "}
+        <span className="font-semibold text-gray-400 ">{totalPages * 5}</span>
       </span>
       <ul className="inline-flex -space-x-px rtl:space-x-reverse text-sm h-8">
         <li>
