@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getAllCustomer, addCustomer } from "../../services/customer.services";
 import CustomerPageTemplate from "../../components/Layouts/CustomerPageTemplate";
 
-function Customer() {
+const Customer = () => {
   const [customers, setCustomers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -75,6 +75,6 @@ function Customer() {
       handleAddCustomer={handleAddCustomer}
     />
   );
-}
+};
 
 export default Customer;
