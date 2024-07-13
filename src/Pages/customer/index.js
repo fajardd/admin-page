@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { fetchCustomers } from "../../services/customer.services";
+import { getAllCustomer } from "../../services/customer.services";
 import CustomerPageTemplate from "../../components/Layouts/CustomerPageTemplate";
 
 function Customer() {
@@ -12,7 +12,7 @@ function Customer() {
   useEffect(() => {
     const getCustomers = async (page) => {
       try {
-        const data = await fetchCustomers(page);
+        const data = await getAllCustomer(page);
         setCustomers(data.data);
         setTotalPages(data.totalPages);
       } catch (error) {
