@@ -24,3 +24,26 @@ export const getAllCustomer = async (page = 1, limit = 5) => {
     throw error;
   }
 };
+
+export const addCustomer = async (customerData) => {
+  try {
+    const token = Cookies.get("token");
+    const response = await fetch(`${BASE_URL}/users`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(customerData),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to add customer");
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error adding Customer", error);
+    throw error;
+  }
+};
