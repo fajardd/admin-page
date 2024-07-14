@@ -1,14 +1,15 @@
 {
   "files": {
-    "main.css": "/admin-page/static/css/main.727cd621.css",
-    "main.js": "/admin-page/static/js/main.b28fbdd9.js",
+    "main.css": "/admin-page/static/css/main.3bb5713c.css",
+    "main.js": "/admin-page/static/js/main.9419a978.js",
     "static/media/admin.webp": "/admin-page/static/media/admin.66c5d9de33d0c9f602ef.webp",
+    "static/media/bgPetcare.png": "/admin-page/static/media/bgPetcare.b04d60d4f030616b4ac0.png",
     "index.html": "/admin-page/index.html",
-    "main.727cd621.css.map": "/admin-page/static/css/main.727cd621.css.map",
-    "main.b28fbdd9.js.map": "/admin-page/static/js/main.b28fbdd9.js.map"
+    "main.3bb5713c.css.map": "/admin-page/static/css/main.3bb5713c.css.map",
+    "main.9419a978.js.map": "/admin-page/static/js/main.9419a978.js.map"
   },
   "entrypoints": [
-    "static/css/main.727cd621.css",
-    "static/js/main.b28fbdd9.js"
+    "static/css/main.3bb5713c.css",
+    "static/js/main.9419a978.js"
   ]
 }
