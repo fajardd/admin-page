@@ -1,4 +1,3 @@
-// [id_user].js
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {
@@ -10,12 +9,20 @@ import UpdateCustomerPageTemplate from "../../components/Layouts/UpdateCustomerP
 function UpdateCustomerPage() {
   const { id_user } = useParams();
   const [customer, setCustomer] = useState(null);
+  const [updatedCustomer, setUpdatedCustomer] = useState({
+    nama: "",
+    id_role: "6eb7bcda-9af0-4dc2-a87b-89592a15a7f9",
+    no_telp: "",
+    email: "",
+    password: "",
+  });
 
   useEffect(() => {
     async function fetchCustomer() {
       try {
         const data = await getByIdCustomer(id_user);
         setCustomer(data.data);
+        setUpdatedCustomer(data.data);
       } catch (error) {
         console.error("Error fetching customer:", error);
       }
@@ -23,8 +30,21 @@ function UpdateCustomerPage() {
     fetchCustomer();
   }, [id_user]);
 
-  const handleUpdateCustomer = () => {
-    console.log("update");
+  const handleInputChange = async (e) => {
+    const { id, value } = e.target;
+    setUpdatedCustomer((prevState) => ({
+      ...prevState,
+      [id]: value,
+    }));
+  };
+
+  const handleUpdateCustomer = async (e) => {
+    e.preventDefault();
+    try {
+      await updateCustomer(id_user, updatedCustomer);
+    } catch (error) {
+      console.error("Error updating customer:", error);
+    }
   };
 
   if (!customer) {
@@ -33,8 +53,9 @@ function UpdateCustomerPage() {
 
   return (
     <UpdateCustomerPageTemplate
-      customer={customer}
+      customer={updatedCustomer}
       handleUpdateCustomer={handleUpdateCustomer}
+      handleInputChange={handleInputChange}
     />
   );
 }

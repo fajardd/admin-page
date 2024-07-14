@@ -96,10 +96,10 @@ export const getByIdCustomer = async (id_user) => {
 };
 
 // UPDATE DTA CUSTOMER
-export const updateCustomer = async (customerData) => {
+export const updateCustomer = async (id_user, customerData) => {
   try {
     const token = Cookies.get("token");
-    const response = await fetch(`${BASE_URL}/users`, {
+    const response = await fetch(`${BASE_URL}/users/${id_user}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

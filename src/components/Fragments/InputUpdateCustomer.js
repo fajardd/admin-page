@@ -6,7 +6,7 @@ function InputUpdateCustomer({ id, label, type, value, onChange }) {
   return (
     <div>
       <Label htmlFor={id}>{label}</Label>
-      <InputUpdateData type={type} value={value} onChange={onChange} />
+      <InputUpdateData id={id} type={type} value={value} onChange={onChange} />
     </div>
   );
 }
