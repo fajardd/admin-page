@@ -20,7 +20,7 @@ function LoginTemplate({ onLogin }) {
     }
   };
   return (
-    <div className="h-screen bg-blue-400 z-0">
+    <div className="h-screen bg-blue-700 z-0">
       <div className="px-6 md:px-0 flex md:justify-center z-10">
         <div className="grid border shadow bg-white rounded-[20px] p-6 space-y-4 w-full md:w-1/2 xl:w-1/4 mt-32">
           <div className="flex">
