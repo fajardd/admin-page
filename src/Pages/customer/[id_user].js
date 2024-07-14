@@ -1,7 +1,11 @@
 // [id_user].js
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getByIdCustomer } from "../../services/customer.services";
+import {
+  getByIdCustomer,
+  updateCustomer,
+} from "../../services/customer.services";
+import UpdateCustomerPageTemplate from "../../components/Layouts/UpdateCustomerPageTemplate";
 
 function UpdateCustomerPage() {
   const { id_user } = useParams();
@@ -19,16 +23,19 @@ function UpdateCustomerPage() {
     fetchCustomer();
   }, [id_user]);
 
+  const handleUpdateCustomer = () => {
+    console.log("update");
+  };
+
   if (!customer) {
     return <div>Loading...</div>;
   }
 
   return (
-    <div>
-      <h1>Nama: {customer.nama}</h1>
-      <h1>Email: {customer.email}</h1>
-      <h1>No Telp: {customer.no_telp}</h1>
-    </div>
+    <UpdateCustomerPageTemplate
+      customer={customer}
+      handleUpdateCustomer={handleUpdateCustomer}
+    />
   );
 }
 
