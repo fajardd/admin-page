@@ -28,7 +28,7 @@ function LoginTemplate({ onLogin }) {
               <img src={adminLogo} className="w-6 h-6" alt="logo-admin" />
             </div>
             <div>
-              <h1 className="font-semibold text-52 text-[24px]">Login admin</h1>
+              <h1 className="font-semibold text-52 text-[24px]">Login Admin</h1>
             </div>
           </div>
 
