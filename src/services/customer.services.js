@@ -16,7 +16,7 @@ export const getAllCustomer = async (page = 1, limit = 5) => {
       }
     );
     if (!response.ok) {
-      throw new Error("Failed to fetch customers");
+      throw new Error("Please Login");
     }
     const data = await response.json();
     return data;
@@ -69,6 +69,52 @@ export const deleteCustomer = async (id_user) => {
     return data;
   } catch (error) {
     console.error("Error delete Customer", error);
+    throw error;
+  }
+};
+
+// GET BY ID CUSTOMER
+export const getByIdCustomer = async (id_user) => {
+  try {
+    const token = Cookies.get("token");
+    const response = await fetch(`${BASE_URL}/users/${id_user}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    if (!response.ok) {
+      throw new Error("Please Login");
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching id customers:", error);
+    throw error;
+  }
+};
+
+// UPDATE DTA CUSTOMER
+export const updateCustomer = async (customerData) => {
+  try {
+    const token = Cookies.get("token");
+    const response = await fetch(`${BASE_URL}/users`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(customerData),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to add customer");
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error adding Customer", error);
     throw error;
   }
 };

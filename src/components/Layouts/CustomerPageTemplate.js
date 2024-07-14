@@ -14,7 +14,7 @@ function CustomerPageTemplate({
   handleDeleteCustomer,
 }) {
   return (
-    <div>
+    <div className="p-6">
       <h1 className="text-[24px] font-semibold">Customer</h1>
       <p className="text-blue-700">Customer</p>
       <InputAddCustomer

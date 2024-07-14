@@ -1,11 +1,14 @@
+// RouteUpdate.js
 import React from "react";
+import { Link } from "react-router-dom";
 import { PencilSquareIcon } from "@heroicons/react/24/outline";
 
-function ButtonUpdate({ ...props }) {
+function RouteUpdate(props) {
   return (
-    <button {...props}>
+    <Link {...props}>
       <PencilSquareIcon className="stroke-yellow-600 w-6 h-6" />
-    </button>
+    </Link>
   );
 }
-export default ButtonUpdate;
+
+export default RouteUpdate;
