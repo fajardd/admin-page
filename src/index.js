@@ -6,6 +6,9 @@ import Dashboard from "./pages/dashboard";
 import Admin from "./pages/admin";
 import Veterinarian from "./pages/veterinarian";
 import Customer from "./pages/customer";
+import Riwayat from "./pages/riwayat";
+import Schedule from "./pages/schedule";
+import Pelayanan from "./pages/pelayanan";
 import UpdateCustomerPage from "./pages/customer/[id_user]";
 import Sidebar from "./components/Layouts/Sidebar";
 import "./assets/Styles/index.css";
@@ -41,6 +44,9 @@ const App = () => {
             <Route path="/veterenarian" element={<Veterinarian />} />
             <Route path="/customer" element={<Customer />} />
             <Route path="/customer/:id_user" element={<UpdateCustomerPage />} />
+            <Route path="/riwayat" element={<Riwayat />} />
+            <Route path="/schedule" element={<Schedule />} />
+            <Route path="/pelayanan" element={<Pelayanan />} />
           </Routes>
         </div>
       </div>
