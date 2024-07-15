@@ -29,7 +29,6 @@ function UpdateCustomerPageTemplate({
             value={customer.nama}
             onChange={handleInputChange}
           />
-
           <InputUpdateCustomer
             label="No Telp"
             id="no_telp"
@@ -42,13 +41,6 @@ function UpdateCustomerPageTemplate({
             id="email"
             type="text"
             value={customer.email}
-            onChange={handleInputChange}
-          />
-          <InputUpdateCustomer
-            label="Password"
-            id="password"
-            type="text"
-            value={customer.password}
             onChange={handleInputChange}
           />
           <ButtonUpdate type="submit">Update</ButtonUpdate>

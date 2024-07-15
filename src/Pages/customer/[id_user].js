@@ -11,10 +11,8 @@ function UpdateCustomerPage() {
   const [customer, setCustomer] = useState(null);
   const [updatedCustomer, setUpdatedCustomer] = useState({
     nama: "",
-    id_role: "6eb7bcda-9af0-4dc2-a87b-89592a15a7f9",
     no_telp: "",
     email: "",
-    password: "",
   });
 
   useEffect(() => {

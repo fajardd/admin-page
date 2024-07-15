@@ -7,7 +7,6 @@ function CustomerTable({ customers, currentPage, handleDeleteCustomer }) {
     <div className="overflow-x-auto w-full mt-6 border">
       <Table className="w-[100px] text-sm text-left border rtl:text-right text-black">
         <thead className="text-xs text-black bg-white border-b w-10">
-          {" "}
           <tr>
             <th scope="col" className="px-6 py-3">
               NO

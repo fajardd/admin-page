@@ -48,7 +48,8 @@ const Customer = () => {
 
   const handleAddCustomer = async () => {
     try {
-      const newCustomer = await addCustomer(formData);
+      const response = await addCustomer(formData);
+      const newCustomer = response.data;
       setCustomers((prevCustomers) => [...prevCustomers, newCustomer]);
       setFormData({
         nama: "",
