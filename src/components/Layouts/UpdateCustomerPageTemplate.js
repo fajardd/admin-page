@@ -1,8 +1,8 @@
 import React from "react";
 import InputUpdateCustomer from "../Fragments/InputUpdateCustomer";
 import ButtonUpdate from "../Elements/ButtonUpdate";
-import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import ButtonBack from "../Elements/ButtonBack";
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
 
 function UpdateCustomerPageTemplate({
   handleUpdateCustomer,
@@ -17,8 +17,6 @@ function UpdateCustomerPageTemplate({
         <ChevronRightIcon className="stroke-slate-300 w-6 h-6" />
         <p className="text-blue-700">Detail Customer</p>
       </div>
-
-      <ButtonBack>Kembali</ButtonBack>
 
       <div className="border shadow rounded-[20px] p-6 mt-6">
         <form onSubmit={handleUpdateCustomer} className="grid space-y-6  ">
@@ -46,6 +44,7 @@ function UpdateCustomerPageTemplate({
           <ButtonUpdate type="submit">Update</ButtonUpdate>
         </form>
       </div>
+      <ButtonBack to={`/customer`} />
     </div>
   );
 }
