@@ -5,6 +5,7 @@ import {
   updateCustomer,
 } from "../../services/customer.services";
 import UpdateCustomerPageTemplate from "../../components/Layouts/UpdateCustomerPageTemplate";
+import Swal from "sweetalert2";
 
 function UpdateCustomerPage() {
   const { id_user } = useParams();
@@ -40,6 +41,11 @@ function UpdateCustomerPage() {
     e.preventDefault();
     try {
       await updateCustomer(id_user, updatedCustomer);
+      Swal.fire({
+        icon: "success",
+        title: "Data berhasil diupdate",
+        showConfirmButton: true,
+      });
     } catch (error) {
       console.error("Error updating customer:", error);
     }

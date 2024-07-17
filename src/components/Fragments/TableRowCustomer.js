@@ -1,7 +1,6 @@
 import React from "react";
 import ButtonDelete from "../Elements/ButtonDelete";
 import RouteUpdate from "../Elements/RouteUpdate";
-import updateCustomerPage from "../../pages/customer/[id_user]";
 
 function TableRowCustomer({
   customer,

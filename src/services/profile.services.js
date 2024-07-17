@@ -1,4 +1,3 @@
-import React from "react";
 import Cookies from "js-cookie";
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 

@@ -5,6 +5,7 @@ import {
   deleteCustomer,
 } from "../../services/customer.services";
 import CustomerPageTemplate from "../../components/Layouts/CustomerPageTemplate";
+import Swal from "sweetalert2";
 
 const Customer = () => {
   const [customers, setCustomers] = useState([]);
@@ -58,6 +59,12 @@ const Customer = () => {
         id_role: "6eb7bcda-9af0-4dc2-a87b-89592a15a7f9",
         password: "",
       });
+      Swal.fire({
+        icon: "success",
+        title: "Berhasil Menambahkan Customer Baru",
+        showConfirmButton: false,
+        timer: 1500,
+      });
     } catch (error) {
       setError(error.message);
     }
@@ -65,10 +72,27 @@ const Customer = () => {
 
   const handleDeleteCustomer = async (id_user) => {
     try {
-      await deleteCustomer(id_user);
-      setCustomers((prevCustomers) =>
-        prevCustomers.filter((customer) => customer.id_user !== id_user)
-      );
+      const result = await Swal.fire({
+        title: "Apakah anda yakin?",
+        text: "Data yang dihapus tidak dapat dikembalikan!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Hapus",
+        cancelButtonText: "Batal",
+      });
+      if (result.isConfirmed) {
+        await deleteCustomer(id_user);
+        setCustomers((prevCustomers) =>
+          prevCustomers.filter((customer) => customer.id_user !== id_user)
+        );
+        Swal.fire({
+          title: "Deleted!",
+          text: "Data berhasil dihapus",
+          icon: "success",
+        });
+      }
     } catch (error) {
       setError(error.message);
     }
