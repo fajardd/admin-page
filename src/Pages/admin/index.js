@@ -4,7 +4,7 @@ import {
   addAdmin,
   deleteAdmin,
 } from "../../services/admin.services";
-import AdminPageTemplate from "../../components/Layouts/AdminPageTemplate";
+import AdminPageTemplate from "../../components/Layouts/Admin/AdminPageTemplate";
 import Swal from "sweetalert2";
 
 const Admin = () => {

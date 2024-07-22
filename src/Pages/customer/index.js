@@ -4,7 +4,7 @@ import {
   addCustomer,
   deleteCustomer,
 } from "../../services/customer.services";
-import CustomerPageTemplate from "../../components/Layouts/CustomerPageTemplate";
+import CustomerPageTemplate from "../../components/Layouts/Customer/CustomerPageTemplate";
 import Swal from "sweetalert2";
 
 const Customer = () => {

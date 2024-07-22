@@ -3,7 +3,7 @@ const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 export const login = async (email, password) => {
   try {
-    const response = await fetch(`${BASE_URL}/login`, {
+    const response = await fetch(`${BASE_URL}/web/v1/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -1,7 +1,7 @@
 import React from "react";
-import InputUpdateCustomer from "../Fragments/InputUpdateCustomer";
-import ButtonUpdate from "../Elements/ButtonUpdate";
-import ButtonBack from "../Elements/ButtonBack";
+import InputUpdateCustomer from "../../Fragments/InputUpdateCustomer";
+import ButtonUpdate from "../../Elements/ButtonUpdate";
+import ButtonBack from "../../Elements/ButtonBack";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
 
 function UpdateAdminPageTemplate({

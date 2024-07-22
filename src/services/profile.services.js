@@ -5,7 +5,7 @@ const BASE_URL = process.env.REACT_APP_BASE_URL;
 export const getProfile = async () => {
   try {
     const token = Cookies.get("token");
-    const response = await fetch(`${BASE_URL}/profile`, {
+    const response = await fetch(`${BASE_URL}/web/v1/profile`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

@@ -6,7 +6,7 @@ export const getAllCustomer = async (page = 1, limit = 5) => {
   try {
     const token = Cookies.get("token");
     const response = await fetch(
-      `${BASE_URL}/customer?page=${page}&limit=${limit}`,
+      `${BASE_URL}/web/v1/customer?page=${page}&limit=${limit}`,
       {
         method: "GET",
         headers: {
@@ -30,7 +30,7 @@ export const getAllCustomer = async (page = 1, limit = 5) => {
 export const addCustomer = async (customerData) => {
   try {
     const token = Cookies.get("token");
-    const response = await fetch(`${BASE_URL}/customer`, {
+    const response = await fetch(`${BASE_URL}/web/v1/customer`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -54,7 +54,7 @@ export const addCustomer = async (customerData) => {
 export const deleteCustomer = async (id_user) => {
   try {
     const token = Cookies.get("token");
-    const response = await fetch(`${BASE_URL}/customer/${id_user}`, {
+    const response = await fetch(`${BASE_URL}/web/v1/customer/${id_user}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -77,7 +77,7 @@ export const deleteCustomer = async (id_user) => {
 export const getByIdCustomer = async (id_user) => {
   try {
     const token = Cookies.get("token");
-    const response = await fetch(`${BASE_URL}/customer/${id_user}`, {
+    const response = await fetch(`${BASE_URL}/web/v1/customer/${id_user}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -99,7 +99,7 @@ export const getByIdCustomer = async (id_user) => {
 export const updateCustomer = async (id_user, customerData) => {
   try {
     const token = Cookies.get("token");
-    const response = await fetch(`${BASE_URL}/customer/${id_user}`, {
+    const response = await fetch(`${BASE_URL}/web/v1/customer/${id_user}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

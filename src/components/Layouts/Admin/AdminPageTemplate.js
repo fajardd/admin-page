@@ -1,7 +1,7 @@
 import React from "react";
-import AdminTable from "../Fragments/AdminTable";
-import PaginationTable from "../Fragments/PaginationTable";
-import InputAddAdmin from "../Fragments/InputAddAdmin";
+import AdminTable from "../../Fragments/AdminTable";
+import PaginationTable from "../../Fragments/PaginationTable";
+import InputAddAdmin from "../../Fragments/InputAddAdmin";
 
 function AdminPageTemplate({
   admins,

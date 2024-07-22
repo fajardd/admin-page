@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom";
 import {
   getByIdCustomer,
   updateCustomer,
-} from "../../services/customer.services";
-import UpdateCustomerPageTemplate from "../../components/Layouts/UpdateCustomerPageTemplate";
+} from "../../../services/customer.services";
+import UpdateCustomerPageTemplate from "../../../components/Layouts/Customer/UpdateCustomerPageTemplate";
 import Swal from "sweetalert2";
 
 function UpdateCustomerPage() {

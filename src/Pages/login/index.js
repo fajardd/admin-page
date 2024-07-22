@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import LoginTemplate from "../../components/Layouts/LoginTemplate";
+import LoginTemplate from "../../components/Layouts/Login/LoginTemplate";
 
 function LoginPage({ onLogin }) {
   useEffect(() => {

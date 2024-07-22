@@ -1,7 +1,7 @@
 import React from "react";
-import CustomerTable from "../Fragments/CustomerTable";
-import PaginationTable from "../Fragments/PaginationTable";
-import InputAddCustomer from "../Fragments/InputAddCustomer";
+import CustomerTable from "../../Fragments/CustomerTable";
+import PaginationTable from "../../Fragments/PaginationTable";
+import InputAddCustomer from "../../Fragments/InputAddCustomer";
 
 function CustomerPageTemplate({
   customers,

@@ -5,7 +5,7 @@ const BASE_URL = process.env.REACT_APP_BASE_URL;
 export const getAllAdmin = async (page = 1) => {
   try {
     const token = Cookies.get("token");
-    const response = await fetch(`${BASE_URL}/admin?page${page}`, {
+    const response = await fetch(`${BASE_URL}/web/v1/admin?page${page}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -27,7 +27,7 @@ export const getAllAdmin = async (page = 1) => {
 export const addAdmin = async (adminData) => {
   try {
     const token = Cookies.get("token");
-    const response = await fetch(`${BASE_URL}/admin`, {
+    const response = await fetch(`${BASE_URL}/web/v1/admin`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -50,7 +50,7 @@ export const addAdmin = async (adminData) => {
 export const deleteAdmin = async (id_user) => {
   try {
     const token = Cookies.get("token");
-    const response = await fetch(`${BASE_URL}/admin/${id_user}`, {
+    const response = await fetch(`${BASE_URL}/web/v1/admin/${id_user}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -72,7 +72,7 @@ export const deleteAdmin = async (id_user) => {
 export const getByIdAdmin = async (id_user) => {
   try {
     const token = Cookies.get("token");
-    const response = await fetch(`${BASE_URL}/admin/${id_user}`, {
+    const response = await fetch(`${BASE_URL}/web/v1/admin/${id_user}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -94,7 +94,7 @@ export const getByIdAdmin = async (id_user) => {
 export const updateAdmin = async (id_user, adminData) => {
   try {
     const token = Cookies.get("token");
-    const response = await fetch(`${BASE_URL}/admin/${id_user}`, {
+    const response = await fetch(`${BASE_URL}/web/v1/admin/${id_user}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

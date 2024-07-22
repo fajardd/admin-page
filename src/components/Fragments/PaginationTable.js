@@ -52,7 +52,7 @@ const PaginationTable = ({ currentPage, totalPages, handlePageChange }) => {
           <ButtonPagination
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
-            className="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 hover:text-white bg-white hover:bg-blue-500 border"
+            className="flex items-center justify-center px-3 h-8 ms-0 leading-tight text-gray-500 hover:text-white bg-white hover:bg-blue-500 border cursor-pointer"
           >
             Previous
           </ButtonPagination>
@@ -81,7 +81,7 @@ const PaginationTable = ({ currentPage, totalPages, handlePageChange }) => {
           <ButtonPagination
             onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
-            className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700"
+            className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 cursor-pointer"
           >
             Next
           </ButtonPagination>

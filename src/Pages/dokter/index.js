@@ -1,25 +1,28 @@
 import React, { useState, useEffect } from "react";
-import { addHistory, getAllHistories } from "../../services/history.services";
-import HistoryPageTemplate from "../../components/Layouts/HistoryPageTemplate";
+import { getAllDokter, addDokter } from "../../services/dokter.services";
+import DokterPageTemplate from "../../components/Layouts/Dokter/DokterPageTemplate";
 import Swal from "sweetalert2";
 
-const Riwayat = () => {
-  const [histories, setHistories] = useState([]);
+function Dokter() {
+  const [dokters, setDokters] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [formData, setFormData] = useState({
-    tanggal: "",
-    riwayat: "",
-    id_user: "",
+    nama: "",
+    no_telp: "",
+    email: "",
+    id_role: "17b4b6fb-db9a-4641-9a0e-2cb098041ff7",
+    password: "",
   });
 
+  // GET ALL DATA
   useEffect(() => {
-    const getHistories = async (page) => {
+    const getDokters = async (page) => {
       try {
-        const data = await getAllHistories(page);
-        setHistories(data.data);
+        const data = await getAllDokter(page);
+        setDokters(data.data);
         setTotalPages(data.totalPages);
       } catch (error) {
         setError(error.message);
@@ -27,34 +30,36 @@ const Riwayat = () => {
         setLoading(false);
       }
     };
-    getHistories(currentPage);
+    getDokters(currentPage);
   }, [currentPage]);
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
   };
 
+  // CREATE DATA DOKTER
   const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [id]: value,
-    }));
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    });
   };
 
-  const handleAddHistory = async () => {
+  const handleAddDokter = async () => {
     try {
-      const response = await addHistory(formData);
-      const newHistory = response.data;
-      setHistories((prevHistories) => [...prevHistories, newHistory]);
+      const response = await addDokter(formData);
+      const newDokter = response.data;
+      setDokters((prevDokters) => [...prevDokters, newDokter]);
       setFormData({
-        tanggal: "",
-        riwayat: " ",
-        id_user: "",
+        nama: "",
+        no_telp: "",
+        email: "",
+        id_role: "17b4b6fb-db9a-4641-9a0e-2cb098041ff7",
+        password: "",
       });
       Swal.fire({
         icon: "success",
-        title: "Berhasil Menambahkan History Baru",
+        title: "Berhasil Menambahkan Dokter Baru",
         showConfirmButton: false,
         timer: 1500,
       });
@@ -69,17 +74,16 @@ const Riwayat = () => {
   if (error) {
     return <div>Error: {error}</div>;
   }
-
   return (
-    <HistoryPageTemplate
-      histories={histories}
+    <DokterPageTemplate
+      dokters={dokters}
       currentPage={currentPage}
       totalPages={totalPages}
       handlePageChange={handlePageChange}
       onChange={handleChange}
       value={formData}
-      handleAddHistory={handleAddHistory}
+      handleAddDokter={handleAddDokter}
     />
   );
-};
-export default Riwayat;
+}
+export default Dokter;

@@ -1,6 +1,7 @@
 import React from "react";
 import ButtonDelete from "../Elements/ButtonDelete";
 import RouteUpdate from "../Elements/RouteUpdate";
+import ButtonDetail from "../Elements/ButtonDetail";
 
 function TableRowCustomer({
   customer,
@@ -17,7 +18,8 @@ function TableRowCustomer({
       <td className="px-6 py-4">{customer.email}</td>
       <td className="flex justify-center space-x-6 px-6 py-4 ">
         <ButtonDelete onClick={() => handleDeleteCustomer(customer.id_user)} />
-        <RouteUpdate to={`/customer/${customer.id_user}`} />
+        <RouteUpdate to={`/customer/update-customer/${customer.id_user}`} />
+        <ButtonDetail to={`/customer/detail-customer/${customer.id_user}`} />
       </td>
     </tr>
   );

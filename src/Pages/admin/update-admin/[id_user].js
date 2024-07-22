@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getByIdAdmin, updateAdmin } from "../../services/admin.services";
-import UpdateAdminPageTemplate from "../../components/Layouts/UpdateAdminPageTemplate";
+import { getByIdAdmin, updateAdmin } from "../../../services/admin.services";
+import UpdateAdminPageTemplate from "../../../components/Layouts/Admin/AdminPageTemplate";
 import Swal from "sweetalert2";
 
 function UpdateAdminPage() {

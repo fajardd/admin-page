@@ -50,7 +50,7 @@ function Sidebar() {
   }
 
   return (
-    <div className="h-screen bg-blue-700 text-white w-64 flex flex-col justify-between">
+    <div className="fixed h-screen bg-pink-700 text-white w-64 flex flex-col justify-between">
       <div className=" p-4 flex flex-col space-y-6">
         <SidebarItem icon={HomeIcon} to="/dashboard" label="Dashboard" />
         <SidebarItem
@@ -58,7 +58,7 @@ function Sidebar() {
           label="Users"
           subItems={[
             { icon: UserIcon, to: "/admin", label: "Admin" },
-            { icon: UserPlusIcon, to: "/veterenarian", label: "Veterenarian" },
+            { icon: UserPlusIcon, to: "/dokter", label: "Dokter" },
             { icon: UsersIcon, to: "/customer", label: "Customer" },
           ]}
         />
@@ -70,7 +70,7 @@ function Sidebar() {
           label="Pelayanan"
         />
       </div>
-      <div className="bg-blue-800 p-3 flex justify-between items-center w-full h-auto">
+      <div className="bg-pink-800 p-3 flex justify-between items-center w-full h-auto">
         <div>
           <h1 className="text-[16px] font-medium">{profile.nama}</h1>
           <p className="text-[12px] font-medium">{profile.role.role_name}</p>

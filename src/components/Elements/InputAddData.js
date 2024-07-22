@@ -5,7 +5,9 @@ function InputAddData({ type, placeholder, ...props }) {
     <input
       type={type}
       placeholder={placeholder}
-      className="border border-slate-300 focus:border-blue-700 focus:outline-none  rounded-md text-[16px] p-2"
+      className={`border border-slate-300 focus:border-blue-700 focus:outline-none rounded-md text-[16px] p-2 ${
+        type === "date" ? "placeholder-custom" : ""
+      }`}
       {...props}
     />
   );
