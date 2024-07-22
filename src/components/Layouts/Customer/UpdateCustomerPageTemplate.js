@@ -18,7 +18,7 @@ function UpdateCustomerPageTemplate({
         <p className="text-blue-700">Detail Customer</p>
       </div>
 
-      <div className="border shadow rounded-[20px] p-6 mt-6">
+      <div className="border shadow bg-white rounded-[20px] p-6 mt-6">
         <form onSubmit={handleUpdateCustomer} className="grid space-y-6  ">
           <InputUpdateCustomer
             label="Nama"
