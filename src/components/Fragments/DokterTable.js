@@ -18,7 +18,7 @@ function DokterTable({ dokters, currentPage, handleDeleteDokter }) {
               Role
             </th>
             <th scope="col" className="px-6 py-3">
-              No Telp
+              Username
             </th>
             <th scope="col" className="px-6 py-3">
               Email

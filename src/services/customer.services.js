@@ -40,7 +40,8 @@ export const addCustomer = async (customerData) => {
     });
 
     if (!response.ok) {
-      throw new Error("Failed to add customer");
+      const errorData = await response.json();
+      throw new Error(errorData.message || "Failed to add customer");
     }
     const data = await response.json();
     return data;
@@ -73,7 +74,7 @@ export const deleteCustomer = async (id_user) => {
   }
 };
 
-// GET BY ID CUSTOMER
+// GET BY ID HISTORY BY CUSTOMER
 export const getByIdCustomer = async (id_user) => {
   try {
     const token = Cookies.get("token");
@@ -85,7 +86,7 @@ export const getByIdCustomer = async (id_user) => {
       },
     });
     if (!response.ok) {
-      throw new Error("Please Login");
+      throw new Error("Fauled get detail customer");
     }
     const data = await response.json();
     return data;
@@ -109,12 +110,13 @@ export const updateCustomer = async (id_user, customerData) => {
     });
 
     if (!response.ok) {
-      throw new Error("Failed to add customer");
+      const errorData = await response.json();
+      throw new Error(errorData.message || "Failed to update customer");
     }
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error("Error adding Customer", error);
+    console.error("Error update Customer", error);
     throw error;
   }
 };

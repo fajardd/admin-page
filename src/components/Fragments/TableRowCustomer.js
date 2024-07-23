@@ -14,12 +14,12 @@ function TableRowCustomer({
       <td className="px-6 py-4">{(currentPage - 1) * 5 + index + 1}</td>
       <td className="px-6 py-4">{customer.nama}</td>
       <td className="px-6 py-4">{customer.role?.role_name || "N/A"}</td>
-      <td className="px-6 py-4">{customer.no_telp}</td>
+      <td className="px-6 py-4">{customer.username}</td>
       <td className="px-6 py-4">{customer.email}</td>
       <td className="flex justify-center space-x-6 px-6 py-4 ">
         <ButtonDelete onClick={() => handleDeleteCustomer(customer.id_user)} />
         <RouteUpdate to={`/customer/update-customer/${customer.id_user}`} />
-        <ButtonDetail to={`/customer/detail-customer/${customer.id_user}`} />
+        <ButtonDetail to={`/customer/history-customer/${customer.id_user}`} />
       </td>
     </tr>
   );

@@ -1,26 +1,18 @@
-import { useState } from "react";
 import InputField from "../../Fragments/InputFIeld";
 import Button from "../../Elements/Button";
-import { login } from "../../../services/auth.services";
 import adminLogo from "../../../assets/Images/admin.webp";
 import { EnvelopeIcon, LockClosedIcon } from "@heroicons/react/24/outline";
 
-function LoginTemplate({ onLogin }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      await login(email, password);
-      onLogin();
-    } catch (error) {
-      setError("Email atau password salah!");
-    }
-  };
+function LoginTemplate({
+  email,
+  setEmail,
+  password,
+  setPassword,
+  error,
+  handleSubmit,
+}) {
   return (
-    <div className="h-screen bg-pink-700 z-0">
+    <div className="h-screen bg-blue-600 z-0">
       <div className="px-6 md:px-0 flex md:justify-center z-10">
         <div className="grid border shadow bg-white rounded-[20px] p-6 space-y-4 w-full md:w-1/2 xl:w-1/4 mt-32">
           <div className="flex">

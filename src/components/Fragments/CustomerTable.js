@@ -18,7 +18,7 @@ function CustomerTable({ customers, currentPage, handleDeleteCustomer }) {
               Role
             </th>
             <th scope="col" className="px-6 py-3">
-              No Telp
+              Username
             </th>
             <th scope="col" className="px-6 py-3">
               Email

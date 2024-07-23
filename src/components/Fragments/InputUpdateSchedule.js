@@ -1,0 +1,50 @@
+import React from "react";
+import InputUpdateCustomer from "./InputUpdateCustomer";
+import MultiSelectUser from "../Elements/MultiSelectUser";
+import InputUpdateDate from "./InputUpdateDate";
+import ButtonUpdate from "../Elements/ButtonUpdate";
+
+function InputUpdateSchedule({
+  handleUpdateSchedule,
+  schedule,
+  listDokter,
+  selectedDokters,
+  onSelectDokter,
+  onRemoveDokter,
+  handleDateChange,
+}) {
+  return (
+    <div className="border shadow bg-white rounded-[20px] p-6 mt-6">
+      <form onSubmit={handleUpdateSchedule} className="grid space-y-6">
+        <InputUpdateCustomer
+          label="Hari"
+          id="day"
+          type="text"
+          value={schedule.day}
+          disabled
+        />
+        <InputUpdateDate
+          selected={
+            schedule.tanggal
+              ? new Date(schedule.tanggal.split("-").reverse().join("-"))
+              : null
+          }
+          onChange={handleDateChange}
+        />
+        <MultiSelectUser
+          id="id_user"
+          label="Dokter"
+          options={listDokter}
+          displayValue="nama"
+          selectedValues={selectedDokters}
+          onSelect={onSelectDokter}
+          onRemove={onRemoveDokter}
+          value={schedule.id_user}
+        />
+        <ButtonUpdate type="submit">Update</ButtonUpdate>
+      </form>
+    </div>
+  );
+}
+
+export default InputUpdateSchedule;

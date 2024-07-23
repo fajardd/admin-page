@@ -14,10 +14,10 @@ function InputAddDokter({ onChange, value, handleAddDokter }) {
       />
       <InputAddData
         type="text"
-        placeholder="Masukkan no telp"
-        id="no_telp"
+        placeholder="Masukkan username"
+        id="username"
         onChange={onChange}
-        value={value.no_telp}
+        value={value.username}
       />
       <InputAddData
         type="text"

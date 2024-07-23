@@ -18,13 +18,10 @@ function AdminTable({ admins, currentPage, handleDeleteAdmin }) {
               Role
             </th>
             <th scope="col" className="px-6 py-3">
-              No Telp
+              Username
             </th>
             <th scope="col" className="px-6 py-3">
               Email
-            </th>
-            <th scope="col" className="px-6 py-3">
-              Action
             </th>
           </tr>
         </thead>

@@ -15,7 +15,7 @@ const Admin = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [formData, setFormData] = useState({
     nama: "",
-    no_telp: "",
+    username: "",
     email: "",
     id_role: "ebe1f9bf-f7d6-446a-a8d6-bbdf21172d10",
     password: "",
@@ -63,7 +63,7 @@ const Admin = () => {
       setAdmins((prevAdmins) => [...prevAdmins, newCustomer]);
       setFormData({
         nama: "",
-        no_telp: "",
+        username: "",
         email: "",
         id_role: "ebe1f9bf-f7d6-446a-a8d6-bbdf21172d10",
         password: "",

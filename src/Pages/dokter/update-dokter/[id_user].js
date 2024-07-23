@@ -1,53 +1,50 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import {
-  getByIdCustomer,
-  updateCustomer,
-} from "../../../services/customer.services";
-import UpdateCustomerPageTemplate from "../../../components/Layouts/Customer/UpdateCustomerPageTemplate";
+import { getByIdDokter, updateDokter } from "../../../services/dokter.services";
+import UpdateDokterPageTemplate from "../../../components/Layouts/Dokter/UpdateDokterPageTemplate";
 import Swal from "sweetalert2";
 
-function UpdateCustomerPage() {
+function UpdateDokterPage() {
   const { id_user } = useParams();
-  const [customer, setCustomer] = useState(null);
-  const [updatedCustomer, setUpdatedCustomer] = useState({
+  const [dokter, setDokter] = useState(null);
+  const [updatedDokter, setUpdatedDokter] = useState({
     nama: "",
     username: "",
     email: "",
   });
 
   useEffect(() => {
-    async function fetchCustomer() {
+    async function fetchDokter() {
       try {
-        const data = await getByIdCustomer(id_user);
-        setCustomer(data.data);
-        setUpdatedCustomer(data.data);
+        const data = await getByIdDokter(id_user);
+        setDokter(data.data);
+        setUpdatedDokter(data.data);
       } catch (error) {
-        console.error("Error fetching customer:", error);
+        console.error("Error fetching dokter:", error);
       }
     }
-    fetchCustomer();
+    fetchDokter();
   }, [id_user]);
 
   const handleInputChange = async (e) => {
     const { id, value } = e.target;
-    setUpdatedCustomer((prevState) => ({
+    setUpdatedDokter((prevState) => ({
       ...prevState,
       [id]: value,
     }));
   };
 
-  const handleUpdateCustomer = async (e) => {
+  const handleUpdateDokter = async (e) => {
     e.preventDefault();
     try {
-      await updateCustomer(id_user, updatedCustomer);
+      await updateDokter(id_user, updatedDokter);
       Swal.fire({
         icon: "success",
         title: "Data berhasil diupdate",
         showConfirmButton: true,
       });
     } catch (error) {
-      console.error("Error updating customer:", error);
+      console.error("Error updating dokter:", error);
       console.error("API response error:", error.response);
       const errorMessage =
         error.response?.data?.message || error.message || "Terjadi kesalahan";
@@ -57,21 +54,20 @@ function UpdateCustomerPage() {
         showConfirmButton: true,
         text: errorMessage,
       });
-      console.error("Error updating customer:", error);
+      console.error("Error updating dokter:", error);
     }
   };
 
-  if (!customer) {
+  if (!dokter) {
     return <div>Loading...</div>;
   }
-
   return (
-    <UpdateCustomerPageTemplate
-      customer={updatedCustomer}
-      handleUpdateCustomer={handleUpdateCustomer}
+    <UpdateDokterPageTemplate
+      dokter={updatedDokter}
+      handleUpdateDokter={handleUpdateDokter}
       handleInputChange={handleInputChange}
     />
   );
 }
 
-export default UpdateCustomerPage;
+export default UpdateDokterPage;

@@ -28,10 +28,10 @@ function UpdateCustomerPageTemplate({
             onChange={handleInputChange}
           />
           <InputUpdateCustomer
-            label="No Telp"
-            id="no_telp"
+            label="username"
+            id="username"
             type="text"
-            value={customer.no_telp}
+            value={customer.username}
             onChange={handleInputChange}
           />
           <InputUpdateCustomer

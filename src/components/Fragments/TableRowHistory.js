@@ -11,7 +11,8 @@ function TableRowHistory({ history, currentPage, index, handleDeleteHistory }) {
         {moment(history.tanggal, "DD-MM-YYYY").format("D MMMM YYYY")}
       </td>{" "}
       <td className="px-6 py-4">{history.user.nama}</td>
-      <td className="px-6 py-4">{history.riwayat}</td>
+      <td className="px-6 py-4">{history.pelayanan}</td>
+      <td className="px-6 py-4 text-justify">{history.keterangan}</td>
       <td className="flex justify-center space-x-6 px-6 py-4 ">
         <ButtonDelete onClick={() => handleDeleteHistory(history.id_history)} />
         <ButtonDetail to={`/history/${history.id_history}`} />

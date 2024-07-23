@@ -35,8 +35,10 @@ export const addAdmin = async (adminData) => {
       },
       body: JSON.stringify(adminData),
     });
+
     if (!response.ok) {
-      throw new Error("Failed to add admin");
+      const errorData = await response.json();
+      throw new Error(errorData.message || "Failed to add admin");
     }
     const data = await response.json();
     return data;

@@ -14,10 +14,10 @@ function InputAddAdmin({ onChange, value, handleAddAdmin }) {
       />
       <InputAddData
         type="text"
-        placeholder="Masukkan No Telp"
-        id="no_telp"
+        placeholder="Masukkan username"
+        id="username"
         onChange={onChange}
-        value={value.no_telp}
+        value={value.username}
       />
       <InputAddData
         type="text"

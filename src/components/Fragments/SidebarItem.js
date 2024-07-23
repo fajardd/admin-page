@@ -14,7 +14,7 @@ function SidebarItem({ icon, to, label, subItems }) {
   const renderLink = () => (
     <Link
       to={to}
-      className="flex items-center space-x-2 p-2 hover:bg-pink-500 rounded cursor-pointer"
+      className="flex items-center space-x-2 p-2 hover:bg-blue-500 rounded cursor-pointer"
       onClick={handleToggle}
     >
       <SidebarIcon icon={icon} />
@@ -24,7 +24,7 @@ function SidebarItem({ icon, to, label, subItems }) {
 
   const renderDiv = () => (
     <div
-      className="flex items-center space-x-2 p-2 hover:bg-pink-500 rounded cursor-pointer"
+      className="flex items-center space-x-2 p-2 hover:bg-blue-500 rounded cursor-pointer"
       onClick={handleToggle}
     >
       <SidebarIcon icon={icon} />

@@ -15,12 +15,13 @@ const Customer = () => {
   const [totalPages, setTotalPages] = useState(1);
   const [formData, setFormData] = useState({
     nama: "",
-    no_telp: "",
+    username: "",
     email: "",
     id_role: "6eb7bcda-9af0-4dc2-a87b-89592a15a7f9",
     password: "",
   });
 
+  // GET ALL CUSTOMER
   useEffect(() => {
     const getCustomers = async (page) => {
       try {
@@ -40,6 +41,7 @@ const Customer = () => {
     setCurrentPage(newPage);
   };
 
+  // CREATE DATA CUSTOMER
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -54,7 +56,7 @@ const Customer = () => {
       setCustomers((prevCustomers) => [...prevCustomers, newCustomer]);
       setFormData({
         nama: "",
-        no_telp: "",
+        username: "",
         email: "",
         id_role: "6eb7bcda-9af0-4dc2-a87b-89592a15a7f9",
         password: "",
@@ -70,6 +72,7 @@ const Customer = () => {
     }
   };
 
+  // DELETE DATA CUSTOMER
   const handleDeleteCustomer = async (id_user) => {
     try {
       const result = await Swal.fire({

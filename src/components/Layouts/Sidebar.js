@@ -9,7 +9,6 @@ import {
   UserPlusIcon,
   CalendarIcon,
   ClipboardDocumentListIcon,
-  FolderIcon,
 } from "@heroicons/react/24/outline";
 import SidebarItem from "../Fragments/SidebarItem";
 import Cookies from "js-cookie";
@@ -50,7 +49,7 @@ function Sidebar() {
   }
 
   return (
-    <div className="fixed h-screen bg-pink-700 text-white w-64 flex flex-col justify-between">
+    <div className="fixed h-screen bg-blue-700 text-white w-64 flex flex-col justify-between">
       <div className=" p-4 flex flex-col space-y-6">
         <SidebarItem icon={HomeIcon} to="/dashboard" label="Dashboard" />
         <SidebarItem
@@ -62,7 +61,6 @@ function Sidebar() {
             { icon: UsersIcon, to: "/customer", label: "Customer" },
           ]}
         />
-        <SidebarItem icon={FolderIcon} to="/riwayat" label="Riwayat Customer" />
         <SidebarItem icon={CalendarIcon} to="/schedule" label="Jadwal" />
         <SidebarItem
           icon={ClipboardDocumentListIcon}
@@ -70,7 +68,7 @@ function Sidebar() {
           label="Pelayanan"
         />
       </div>
-      <div className="bg-pink-800 p-3 flex justify-between items-center w-full h-auto">
+      <div className="bg-blue-800 p-3 flex justify-between items-center w-full h-auto">
         <div>
           <h1 className="text-[16px] font-medium">{profile.nama}</h1>
           <p className="text-[12px] font-medium">{profile.role.role_name}</p>

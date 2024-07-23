@@ -1,31 +1,32 @@
 import React from "react";
-import InputAddData from "../Elements/InputAddData";
-import ButtonAdd from "../Elements/ButtonAdd";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { format } from "date-fns";
+import InputAddData from "../Elements/InputAddData";
+import ButtonAdd from "../Elements/ButtonAdd";
+import MultiSelectUser from "../Elements/MultiSelectUser";
 import { CalendarDaysIcon } from "@heroicons/react/24/outline";
 
-function InputAddHistory({ onChange, value, handleAddHistory }) {
+function InputAddSchedule({
+  onChange,
+  value,
+  handleAddSchedule,
+  listDokter,
+  onSelectDokter,
+  onRemoveDokter,
+}) {
   const handleDateChange = (date) => {
     const formattedDate = format(date, "dd-MM-yyyy");
     onChange({ target: { id: "tanggal", value: formattedDate } });
   };
+
   return (
     <div className="flex space-x-4 mt-6">
-      <InputAddData
-        type="textArea"
-        placeholder="Masukkan Pelayanan"
-        id="pelayanan"
-        onChange={onChange}
-        value={value.pelayanan}
-      />
-      <InputAddData
-        type="text"
-        placeholder="Masukkan Keterangan"
-        id="keterangan"
-        onChange={onChange}
-        value={value.keterangan}
+      <MultiSelectUser
+        options={listDokter}
+        displayValue="nama_dokter"
+        onSelect={onSelectDokter}
+        onRemove={onRemoveDokter}
       />
       <div className="relative">
         <DatePicker
@@ -43,10 +44,16 @@ function InputAddHistory({ onChange, value, handleAddHistory }) {
           <CalendarDaysIcon className="w-6 h-6 stroke-slate-400 " />
         </div>
       </div>
-
-      <ButtonAdd onClick={handleAddHistory}>Tambah Data</ButtonAdd>
+      <InputAddData
+        type="text"
+        placeholder="Masukkan Hari"
+        id="day"
+        onChange={onChange}
+        value={value.day}
+      />
+      <ButtonAdd onClick={handleAddSchedule}>Tambah Data</ButtonAdd>
     </div>
   );
 }
 
-export default InputAddHistory;
+export default InputAddSchedule;
