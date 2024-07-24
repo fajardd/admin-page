@@ -1,30 +1,21 @@
 import React from "react";
 import Table from "../Elements/Table";
-import TableRowDokter from "./TableRowDokter";
+import TableRowPelayanan from "./TableRowPelayanan";
 
-function DokterTable({ dokters, currentPage, handleDeleteDokter }) {
+function PelayananTable({ services, currentPage, handleDeleteService }) {
   return (
     <div className="overflow-x-auto w-full mt-6 border">
       <Table className="w-[100px] text-sm text-left border rtl:text-right text-black">
         <thead className="text-xs text-black bg-white border-b w-10">
           <tr>
             <th scope="col" className="px-6 py-3">
-              NO
+              No
             </th>
             <th scope="col" className="px-6 py-3">
-              Avatar
+              Nama Pelayanan
             </th>
             <th scope="col" className="px-6 py-3">
-              Nama
-            </th>
-            <th scope="col" className="px-6 py-3">
-              Role
-            </th>
-            <th scope="col" className="px-6 py-3">
-              Username
-            </th>
-            <th scope="col" className="px-6 py-3">
-              Email
+              Deskripsi Pelayanan
             </th>
             <th scope="col" className="px-6 py-3">
               Action
@@ -32,13 +23,13 @@ function DokterTable({ dokters, currentPage, handleDeleteDokter }) {
           </tr>
         </thead>
         <tbody>
-          {dokters.map((dokter, index) => (
-            <TableRowDokter
-              key={dokter.id_user}
-              dokter={dokter}
+          {services.map((service, index) => (
+            <TableRowPelayanan
+              key={service.id_user}
+              service={service}
               index={index}
               currentPage={currentPage}
-              handleDeleteDokter={handleDeleteDokter}
+              handleDeleteService={handleDeleteService}
             />
           ))}
         </tbody>
@@ -46,4 +37,4 @@ function DokterTable({ dokters, currentPage, handleDeleteDokter }) {
     </div>
   );
 }
-export default DokterTable;
+export default PelayananTable;

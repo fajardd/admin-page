@@ -10,6 +10,7 @@ import Customer from "./pages/customer";
 import Schedule from "./pages/schedule";
 import UpdateSchedule from "./pages/schedule/update-schedule/[id_schedule]";
 import Pelayanan from "./pages/pelayanan";
+import UpdatePelayanan from "./pages/pelayanan/update-pelayanan/[id_user]";
 import UpdateCustomerPage from "./pages/customer/update-customer/[id_user]";
 import HistoryCustomer from "./pages/customer/history-customer/[id_user]";
 import Sidebar from "./components/Layouts/Sidebar";
@@ -40,6 +41,7 @@ const App = () => {
         <Sidebar />
         <div className="flex-grow px-2 ml-64 bg-gray-50">
           <Routes>
+            <Route path="/" element={<Dashboard />} />
             <Route path="*" element={<Dashboard />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/dokter" element={<Dokter />} />
@@ -62,6 +64,10 @@ const App = () => {
               element={<UpdateSchedule />}
             />
             <Route path="/pelayanan" element={<Pelayanan />} />
+            <Route
+              path="/pelayanan/update-pelayanan/:id_service"
+              element={<UpdatePelayanan />}
+            />
           </Routes>
         </div>
       </div>

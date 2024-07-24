@@ -12,6 +12,7 @@ function InputUpdateSchedule({
   onSelectDokter,
   onRemoveDokter,
   handleDateChange,
+  updateScheduleData,
 }) {
   return (
     <div className="border shadow bg-white rounded-[20px] p-6 mt-6">
@@ -20,17 +21,19 @@ function InputUpdateSchedule({
           label="Hari"
           id="day"
           type="text"
-          value={schedule.day}
+          value={updateScheduleData.day}
           disabled
         />
         <InputUpdateDate
+          label="Tanggal"
           selected={
-            schedule.tanggal
-              ? new Date(schedule.tanggal.split("-").reverse().join("-"))
+            updateScheduleData.tanggal
+              ? new Date(updateScheduleData.tanggal)
               : null
           }
           onChange={handleDateChange}
         />
+
         <MultiSelectUser
           id="id_user"
           label="Dokter"
@@ -39,7 +42,7 @@ function InputUpdateSchedule({
           selectedValues={selectedDokters}
           onSelect={onSelectDokter}
           onRemove={onRemoveDokter}
-          value={schedule.id_user}
+          value={updateScheduleData.id_user}
         />
         <ButtonUpdate type="submit">Update</ButtonUpdate>
       </form>

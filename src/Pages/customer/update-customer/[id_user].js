@@ -47,8 +47,6 @@ function UpdateCustomerPage() {
         showConfirmButton: true,
       });
     } catch (error) {
-      console.error("Error updating customer:", error);
-      console.error("API response error:", error.response);
       const errorMessage =
         error.response?.data?.message || error.message || "Terjadi kesalahan";
       Swal.fire({

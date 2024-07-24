@@ -17,7 +17,7 @@ function MultiSelectUser({
       <Label htmlFor={id}>{label}</Label>
       <div className="relative">
         <Multiselect
-          className="w-full bg-white"
+          className="w-full bg-white cursor-pointer"
           options={options}
           displayValue={displayValue}
           onSelect={onSelect}
@@ -25,7 +25,7 @@ function MultiSelectUser({
           selectedValues={selectedValues}
           placeholder="Update dokter"
         />
-        <div className="absolute right-2 top-2">
+        <div className="absolute right-2 top-2 cursor-pointer">
           <UserIcon className="stroke-slate-400 w-6 h-6" />
         </div>
       </div>

@@ -6,7 +6,11 @@ function InputUpdateDate({ id, label, selected, onChange }) {
   return (
     <div>
       <Label id={id}>{label}</Label>
-      <InputDate selected={selected} onChange={onChange} />
+      <InputDate
+        selected={selected}
+        onChange={onChange}
+        dateFormat="yyyy-MM-dd"
+      />
     </div>
   );
 }

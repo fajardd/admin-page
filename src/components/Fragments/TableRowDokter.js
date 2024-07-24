@@ -1,7 +1,7 @@
 import React from "react";
 import ButtonDelete from "../Elements/ButtonDelete";
 import RouteUpdate from "../Elements/RouteUpdate";
-import defaultImage from "../../assets/Images/default.jpg";
+import defaultImage from "../../assets/Images/default-image.jpg";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 function TableRowDokter({ dokter, currentPage, index, handleDeleteDokter }) {

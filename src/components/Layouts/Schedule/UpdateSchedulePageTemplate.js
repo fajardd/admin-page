@@ -12,6 +12,7 @@ function UpdateSchedulePageTemplate({
   onSelectDokter,
   onRemoveDokter,
   handleDateChange,
+  updateScheduleData,
 }) {
   return (
     <div className="p-6">
@@ -30,6 +31,7 @@ function UpdateSchedulePageTemplate({
         onSelectDokter={onSelectDokter}
         onRemoveDokter={onRemoveDokter}
         handleDateChange={handleDateChange}
+        updateScheduleData={updateScheduleData}
       />
       <ButtonBack to={`/schedule`} />
     </div>

@@ -83,11 +83,6 @@ function UpdateSchedule() {
   // Handle date change
   const handleDateChange = (date) => {
     const formattedDate = moment(date).format("YYYY-MM-DD");
-    console.log("format tanggal:", formattedDate);
-    setUpdateScheduleData((prevState) => ({
-      ...prevState,
-      tanggal: formattedDate,
-    }));
     setUpdateScheduleData((prevState) => ({
       ...prevState,
       tanggal: formattedDate,
@@ -134,6 +129,7 @@ function UpdateSchedule() {
       onSelectDokter={handleSelectDokter}
       onRemoveDokter={handleRemoveDokter}
       handleDateChange={handleDateChange}
+      updateScheduleData={updateScheduleData}
     />
   );
 }

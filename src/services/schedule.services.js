@@ -14,11 +14,10 @@ export const getAllSchedules = async () => {
     return response.data;
   } catch (error) {
     if (error.response) {
-      console.error("API response error:", error.response);
+      console.error("API response error:", error.message);
     } else {
       console.error("Error get schedules", error.message);
     }
-
     throw error;
   }
 };
