@@ -15,7 +15,7 @@ function UpdateCustomerPageTemplate({
       <div className="flex">
         <p className="text-blue-700">Customer</p>
         <ChevronRightIcon className="stroke-slate-300 w-6 h-6" />
-        <p className="text-blue-700">Detail Customer</p>
+        <p className="text-blue-700">Update Customer</p>
       </div>
 
       <div className="border shadow bg-white rounded-[20px] p-6 mt-6">

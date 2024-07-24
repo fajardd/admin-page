@@ -39,7 +39,7 @@ const App = () => {
     <Router>
       <div className="flex h-screen">
         <Sidebar />
-        <div className="flex-grow px-2 ml-64 bg-gray-50">
+        <div className="flex-grow px-2 md:ml-64 bg-gray-50">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="*" element={<Dashboard />} />

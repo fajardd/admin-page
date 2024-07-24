@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import SidebarIcon from "../Elements/SidebarIcon";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 
 function SidebarItem({ icon, to, label, subItems }) {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const isActive = location.pathname === to;
 
   const handleToggle = () => {
     if (subItems) {
@@ -15,7 +17,9 @@ function SidebarItem({ icon, to, label, subItems }) {
   const renderLink = () => (
     <Link
       to={to}
-      className="flex items-center  space-x-2 p-2 hover:bg-red-500 rounded cursor-pointer"
+      className={`flex items-center space-x-2 p-2 rounded cursor-pointer ${
+        isActive ? "bg-blue-500" : "hover:bg-blue-500"
+      }`}
       onClick={handleToggle}
     >
       <SidebarIcon icon={icon} />
@@ -25,7 +29,9 @@ function SidebarItem({ icon, to, label, subItems }) {
 
   const renderDiv = () => (
     <div
-      className="flex items-center justify-between space-x-2 p-2 hover:bg-blue-500 rounded cursor-pointer"
+      className={`flex items-center justify-between space-x-2 p-2 rounded cursor-pointer ${
+        isActive ? "bg-blue-500" : "hover:bg-blue-500"
+      }`}
       onClick={handleToggle}
     >
       <div className="flex item space-x-2">
@@ -44,7 +50,7 @@ function SidebarItem({ icon, to, label, subItems }) {
     <div>
       {subItems ? renderDiv() : renderLink()}
       {isOpen && subItems && (
-        <div className="ml-6">
+        <div className="space-y-4 mt-4 pl-6">
           {subItems.map((subItem, index) => (
             <SidebarItem
               key={index}
